@@ -13,7 +13,9 @@ A dataset is prepared by generating random data which included details about the
 
 Tools used: 
 
-Python(Flask), Html, CSS, Bootstrap, Azure DeVops(version control), Azure container registry(Docker), Azure Web App Service.
+Python(Flask), Html, CSS, Bootstrap, Azure DeVops(version control), Azure container registry(Docker), Azure Web App Service, PowerBI Pro.
 
 
-(Note - This app was originally developed in DevOps, but as that link cannot be accessed outside KPMG repository, I have put the code here.)
+(Note - This app was originally developed in DevOps, but as that link cannot be accessed outside KPMG repository, I have put the code here.
+
+Also, the dashboard of the app leads to a powerbi report which requires PRO license)
