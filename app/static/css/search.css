@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+body {
+  height: 2000px;
+}
+.navbar .navbar-brand {
+  font-size: 30px;
+  color: #000000;
+}
+.navbar .nav-item {
+  padding: 10px 20px;
+  color: #000000;
+}
+.navbar .nav-link {
+  font-size: 20px;
+  margin-left: 10px;
+  color: #000000;
+}
+.fa-bars {
+  color: #000000;
+  font-size: 30px;
+}
+

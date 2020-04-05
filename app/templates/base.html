@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <link rel="stylesheet" href="../static/css/search.css">
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="stylesheet" href="../static/css/register.css">
+  
+    {% if title %}
+    <title>{{ title }} </title>
+    {% else %}
+    <title>Welcome</title>
+    {% endif %}
+  </head>
+
+  <body>
+      <nav class="navbar sticky-top navbar-expand-lg" style="background-color: #ffffff":>
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/KPMG_logo.svg" style="width:70px;height:40px;" alt="kpmg logo"></a>
+             <h4 style="font-family: KPMG Light, Arial, Helvetica, sans-serif;color:#00338d;font-weight: 400;font-size:38px;">Powered Healthcare</h4>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+       <i class="fas fa-bars"></i>
+      </button>     
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+               {% if current_user.is_authenticated %}
+                  <li class="nav-item"><a class="nav-link" href="https://app.powerbi.com/groups/me/reports/0ff3215c-5a40-44d3-b3ae-2658a236d4eb?ctid=deff24bb-2089-4400-8c8e-f71e680378b2">Dashboard</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{ url_for('search') }}">Search</a></li>
+                  <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+                  {% else %}
+                <li class="nav-item"><a class="nav-link"href="/register">Register</a></li>
+                <li class="nav-item"><a class="nav-link"href="/login">Login</a></li>
+                {% endif %}
+          </ul>
+         </div>
+        </div>
+      </nav>
+      </div>
+    
+      <div class="container">
+        <div>
+        <hr>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+
+        <div class="alert alert-{{ messages.0.0 }}" role="alert">
+        {% for category, message in messages %}
+            {{ message }} <br>
+        {% endfor %}
+        </div>
+
+        {% endif %}
+        {% endwith %}
+
+      </div>
+    
+    {% block content %}{% endblock %}
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="col-md-4 col-sm-4 col-xs-12 ">
+    <footer class="page-footer font-small blue navbar-fixed-bottom">
+      <div class="footer-copyright pull-right py-3">© 2020 Copyright:
+        <a href="#"> KPMG</a>
+      </div>
+    </footer>
+  </div>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

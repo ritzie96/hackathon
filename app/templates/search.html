@@ -1,0 +1,86 @@
+
+{% extends "base.html" %}
+{% block content %}
+ <div class="container bg">
+    <div class="row">
+        <div class="col-md-12">
+        <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-brand" role="tabpanel" aria-labelledby="nav-brand-tab">
+        <div class="row py-5 my-4">
+        <div class="col-md-12">
+        <div class="card-body">
+            <div class="row pb-2">
+            <div class="col-md-3">                               
+            </div>
+            </div>
+        <div class="row ">
+        <div class="col-md-1">
+        <div class="form-group">
+            <form method="POST" action="" enctype="">
+            {{ form.hidden_tag() }}
+            {{ form.csrf_token }}
+            <fieldset>
+        </div>
+        </div>
+        <div class="col-md-5">
+        <div class="form-group">
+            {{ form.keywords(class = "form-control ",placeholder="Enter Keyword like part time nurses etc..") }}
+            {% for error in form.keywords.errors %}
+            <p>{{error}}</p>
+            {% endfor %}
+        </div>
+        </div>
+        <div class="col-md-3">
+        <div class = "form-group">   
+            {{ form.municipality(class = "form-control ") }}
+            {% for error in form.municipality.errors %}
+            <p>{{error}}</p>
+            {% endfor %}
+        </div>
+        </div>
+        </fieldset>
+        <div class="col-md-2">
+        <div class = "form-group">
+            {{ form.search(class = "btn btn-primary btn-block") }}   
+        </div>
+        </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    <hr>
+    <hr>
+
+    <div></div>
+    {% if results %}
+    <table class="table">
+        <thead style="background-color: #ffffff">
+        <tr>
+            <th style="text-align: center" scope="col">Name</th>
+            <th style="text-align: center" scope="col">Distance (in km)</th>
+            <th style="text-align: center" scope="col">Role</th>
+            <th style="text-align: center" scope="col"><button id="mailbutton"class="btn btn-secondary">Send Mail</button></th>
+            <th style="text-align: center" scope="col"><button class="btn btn-secondary">Send Message</button></th>
+        </tr>
+    </thead>
+            {% for element in results %}
+            <tbody>
+                <tr>
+                    <td style="text-align: center" scope="row">{{ element.name }}</td>
+                    <td style="text-align: center">{{ element.distance }}</td>
+                    <td style="text-align: center">{{ element.role }}</td>
+                    <td style="text-align: center"><input class="form-check-input" type="checkbox"></td>
+                    <td style="text-align: center"><input class="form-check-input" type="checkbox"></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        {% endif %}
+    </table>
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+   
+{% endblock %}

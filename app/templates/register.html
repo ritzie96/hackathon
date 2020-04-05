@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid bg">
+    <div class="cont2">
+        <div class="form">    
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <h1>Register</h1>
+            <fieldset >
+                {{ form.username(class = "user",placeholder="username")}}
+                {{ form.email(class = "user",placeholder="email")}}
+                {{ form.municipality(class = "user", placeholder="municipality")}}
+                {{ form.password(class = "pass", placeholder="password")}}               
+            </fieldset>
+                {{ form.register(class = "login")}}
+            </div>
+        </form>
+    </div>    
+    </div>
+    </div>
+    </div>
+{% endblock content %}
