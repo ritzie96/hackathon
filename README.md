@@ -1,5 +1,7 @@
 # Hack The Crisis Sweden 2020
 
+Link to the web app - https://poweredhealthcare.azurewebsites.net/ 
+
 Introduction:
 
 Public health services, especially hospitals, have had a huge increase in demand whilst much of the Swedish workforce have lost their jobs during the Coronavirus pandemic. Our platform solution allows hospitals to find the right people from the population for their growing demand of healthcare work. Hospital staff simply search using the following criteria: Roles & skills & Proximity to hospital
